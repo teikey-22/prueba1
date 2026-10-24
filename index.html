@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqua Flor | Sistema de ventas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="flores">🌸 ❀ 🌷</div>
+    <h1>💧 afro san</h1>
+    <p>Registro de ventas de bebidas y empanadas</p>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="tarjetas-resumen">
+      <article class="tarjeta">
+        <span>💰 Ventas totales</span>
+        <h2 id="totalVentas">$0</h2>
+      </article>
+
+      <article class="tarjeta">
+        <span>🛍️ Unidades vendidas</span>
+        <h2 id="totalUnidades">0</h2>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>🌿 Nuestros productos</h2>
+
+      <div class="productos">
+        <article class="producto">
+          <img
+            src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=300&q=80"
+            alt="Gaseosas">
+          <h3>Gaseosas</h3>
+        </article>
+
+        <article class="producto">
+          <img
+            src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=300&q=80"
+            alt="Agua embotellada">
+          <h3>Aguas</h3>
+        </article>
+
+        <article class="producto">
+          <img
+            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=300&q=80"
+            alt="Empanadas">
+          <h3>Empanadas</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>🧾 Registrar nueva venta</h2>
+
+      <form id="formularioVenta">
+        <label for="producto">Producto</label>
+        <select id="producto" required>
+          <option value="Gaseosa">Gaseosa</option>
+          <option value="Agua">Agua</option>
+          <option value="Empanada">Empanada</option>
+        </select>
+
+        <label for="precio">Precio unitario (COP)</label>
+        <input
+          id="precio"
+          type="number"
+          min="1"
+          step="1"
+          value="3000"
+          required>
+
+        <label for="cantidad">Cantidad</label>
+        <input
+          id="cantidad"
+          type="number"
+          min="1"
+          step="1"
+          value="1"
+          required>
+
+        <label for="metodoPago">Método de pago</label>
+        <select id="metodoPago">
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Tarjeta">Tarjeta</option>
+        </select>
+
+        <button type="submit">＋ Registrar venta</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>🌷 Historial de ventas</h2>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="historialVentas"></tbody>
+        </table>
+      </div>
+
+      <p id="mensajeVacio">Todavía no hay ventas registradas.</p>
+
+      <button type="button" id="exportarCSV">
+        Descargar reporte CSV
+      </button>
+
+      <button type="button" id="borrarVentas" class="boton-rojo">
+        Borrar historial
+      </button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>🌸 Aqua Flor · Frescura en cada venta 🌸</p>
+  </footer>
+
+  <p id="notificacionVenta" class="notificacion-venta" role="status" aria-live="polite" hidden></p>
+
+</body>
+</html>

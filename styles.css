@@ -1,0 +1,259 @@
+
+:root {
+  --fondo: #d9f5f0;
+  --turquesa: #168c8d;
+  --turquesa-oscuro: #086b70;
+  --blanco: #ffffff;
+  --rosa: #e99ab6;
+  --texto: #24585a;
+  --borde: #b5dfd8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+.encabezado {
+  position: relative;
+  padding: 30px 16px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #168c8d, #79d8c9);
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+}
+
+.encabezado h1 {
+  margin: 8px 0;
+  font-size: 34px;
+}
+
+.encabezado p {
+  margin-bottom: 4px;
+}
+
+.flores {
+  color: #ffe1eb;
+  font-size: 25px;
+  letter-spacing: 8px;
+}
+
+.contenedor {
+  width: min(100% - 28px, 900px);
+  margin: 24px auto;
+}
+
+.tarjetas-resumen {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.tarjeta,
+.panel {
+  background: var(--blanco);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px #086b7012;
+}
+
+.tarjeta {
+  background: #f3fffc;
+  border: 1px solid #c4e9e1;
+}
+
+.tarjeta span {
+  font-size: 14px;
+}
+
+.tarjeta h2 {
+  margin: 12px 0 0;
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panel h2 {
+  color: var(--turquesa-oscuro);
+  margin-top: 0;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.producto {
+  text-align: center;
+  background: #effbf8;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.producto img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto h3 {
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 14px 0 7px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: white;
+  color: var(--texto);
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--turquesa);
+  outline-offset: 1px;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--turquesa);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--turquesa-oscuro);
+}
+
+.boton-rojo {
+  background: #c65370;
+}
+
+.boton-rojo:hover {
+  background: #a83b58;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 11px 8px;
+  border-bottom: 1px solid #e0efec;
+  text-align: left;
+}
+
+th {
+  color: var(--turquesa-oscuro);
+  background: #f3fffc;
+}
+
+.accion-eliminar {
+  width: auto;
+  margin: 0;
+  padding: 7px 11px;
+  background: #c65370;
+}
+
+#mensajeVacio {
+  color: #648383;
+  font-size: 14px;
+}
+
+.notificacion-venta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  max-width: calc(100% - 40px);
+  margin: 0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: var(--turquesa-oscuro);
+  color: white;
+  box-shadow: 0 5px 18px #086b7030;
+}
+
+.notificacion-venta[hidden] {
+  display: none;
+}
+
+footer {
+  padding: 22px 12px;
+  color: var(--turquesa-oscuro);
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .encabezado h1 {
+    font-size: 28px;
+  }
+
+  .tarjeta,
+  .panel {
+    padding: 14px;
+  }
+
+  .tarjeta h2 {
+    font-size: 20px;
+  }
+
+  .productos {
+    gap: 8px;
+  }
+
+  .producto {
+    padding: 7px;
+  }
+
+  .producto img {
+    height: 90px;
+  }
+
+  .producto h3 {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 9px 6px;
+    font-size: 13px;
+  }
+}
